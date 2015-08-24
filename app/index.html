@@ -30,52 +30,200 @@
 
 
     <div class="container">
-      <div class="header">Tic-Tac-Toe</div>
+      <div class="header">TIC-TAC-TOE</div>
       <div class="head_line">
-        <ul>
-        <li>Player 1</li>
-        <li>START</li>
-        <li>Player 2</li>
-        </ul>
+        <div class="row">
+          <div class="col-md-8">
+          <div id="player1"><input type="text" class="form-control" placeholder="Player 1"></div>
+          <div id="player2"><input type="text" class="form-control" placeholder="Player 2"></div>
+          </div>
+          <div class="col-md-4">
+          <div id="btnX">
+          <input class="btn btn-success btn-lg btn-block" type="button" value="START" id="btnX">
+          <input class="btn btn-danger btn-lg btn-block" type="button" value="RESET" id="btnX">
+          </div>
+        </div>
       </div>
+      </div>
+      <div class="clear"></div>
       <div class="score_sign">
-      <h1>SCORE</h1>
+      <h2></h2>
       <div class="score">
       <ul>
-        <li>0</li>
-        <li>:</li>
-        <li>0</li>
+        <li>Player 1</li>
+        <li>0:0</li>
+        <li>Player 2</li>
       </ul>
       </div>
       </div>
       <div class="clear"></div>
       <div class="board">
-        <table class="table-responsive">
+        <table>
         <tbody>
+        <!-- Row 1 -->
             <tr id="row1">
-                <td id="a">X</td>
-                <td id="b">O</td>
-                <td id="c">X</td>
-                <td id="d">O</td>
-            </tr>
-            <tr id="row2">
-                <td id="e">E</td>
-                <td id="f">F</td>
-                <td id="g">G</td>
-                <td id="h">H</td>
-            </tr>
-            <tr id="row3">
-                <td id="i">I</td>
-                <td id="j">J</td>
-                <td id="k">K</td>
-                <td id="l">L</td>
-            </tr>
-            <tr id="row4">
-                <td id="m">M</td>
-                <td id="n">N</td>
-                <td id="o">O</td>
-                <td id="p">P</td>
-            </tr>
+              <table class="board1">
+              <tr id="row11">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row12">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row13">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+              <table class="board2">
+              <tr id="row21">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row22">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row23">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+              <table class="board3">
+              <tr id="row31">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row32">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row33">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+           </tr>
+           <div ="clear"></div>
+              <!-- Row 2 -->
+           <tr id="row2">
+              <table class="board4">
+              <tr id="row41">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row42">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row43">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+              <table class="board5">
+              <tr id="row51">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row52">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row53">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+              <table class="board6">
+              <tr id="row61">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row62">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row63">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+              </tr>
+              <!-- Row 3 -->
+              <div ="clear"></div>
+             <tr id="row3">
+              <table class="board7">
+              <tr id="row71">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row72">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row73">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+              <table class="board8">
+              <tr id="row81">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row82">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row83">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+              <table class="board9">
+              <tr id="row91">
+                <td id="a"></td>
+                <td id="b"></td>
+                <td id="c"></td>
+              </tr>
+              <tr id="row92">
+                <td id="d"></td>
+                <td id="e"></td>
+                <td id="f"></td>
+              </tr>
+               <tr id="row93">
+                <td id="j"></td>
+                <td id="h"></td>
+                <td id="i"></td>
+              </tr>
+              </table>
+              </tr>
         </tbody>
         </table>
       </div>
