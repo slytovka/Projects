@@ -13,119 +13,134 @@ $(document).ready(function(){
           turnCount++;
 
       });
+      //passing Player 1 name to form
+      $('#player1').children().keyup(updateName1);
+      function updateName1() {
+        $('#player1Name').text($(this).val());
+      }
+      //passing Player 2 name to form
+      $('#player2').children().keyup(updateName2);
+      function updateName2() {
+        $('#player2Name').text($(this).val());
+      }
 
-      function isGameOver () {
+      //adding functionality for START button
+      $('#btnStart').on('click', function(){
+          $('#btnStart').attr("disabled", true);
+          $('#btnReset').attr("disabled", false);
+      });
+      //adding functionality for RESET button
+      $('#btnReset').on('click', function(){
+          $('#btnReset').attr("disabled", true);
+          $('#btnStart').attr("disabled", false);
+      });
 
+      //function to update Score once someone wins
+      function updateScore(val) {
+          if (val.text() == 'X') {
+            var addScore = parseInt($('#player1Score').text(), 10);
+            var addScore = addScore + 1;
+            $('#player1Score').text(addScore);
+          }
+          if (val.text() == 'O') {
+            var addScore = parseInt($('#player2Score').text(), 10);
+            var addScore = addScore + 1;
+            $('#player2Score').text(addScore);
+          }
+      }
+
+      function changeBackground (lastStep, place) {
+        if (lastStep.text() == 'X') {
+            place.css('background-color', '#FF851B');
+            } if (lastStep.text() == 'O') {
+            place.css('background-color', '#9933FF');
+            }
       }
 
         function isVictory(player) {
        //top row check
-       for (var i=1; i<=9; i++) {
-        var anchorA = $('.board'+i+' #a');
-        var anchorB = $('.board'+i+' #b');
-        var anchorC = $('.board'+i+' #c');
-        var anchorD = $('.board'+i+' #d');
-        var anchorE = $('.board'+i+' #e');
-        var anchorF = $('.board'+i+' #f');
-        var anchorG = $('.board'+i+' #g');
-        var anchorH = $('.board'+i+' #h');
-        var anchorI = $('.board'+i+' #i');
-        var anchorJ = $('.board'+i+' #j');
-        if (anchorA.text() !== '') {
-            if (anchorA.text() == anchorB.text() &&
-                anchorA.text() == anchorC.text()) {
-                  alert('Game over! '+player+' is the winner!');
-                  if (anchorA.text() == 'X') {
-                    $('.board'+i).css('background-color', '#FF851B');
-                  } if (anchorA.text() == 'O') {
-                    $('.board'+i).css('background-color', '#9933FF');
-                  }
 
-                    //TODO Assign whole table to a winner
-                    //Check if whole game finished
-                    //$('.board'+i+' td').hide();
+        if ($('#a').text() !== '') {
+            if ($('#a').text() == $('#b').text() &&
+                $('#a').text() == $('#c').text()) {
+                  alert('Game over! '+player+' is the winner!');
+                  changeBackground($('#a'), $('#row0'));
+                  updateScore($('#a'));
                 }
             }
         //left column check
-        if (anchorA.text() !== ''){
-            if (anchorA.text() == anchorD.text() &&
-                anchorA.text() == anchorJ.text()) {
-                    alert('Game over! '+player+' is the winner!');
-                    //$('.board'+i).text() = anchorA.text();
-                    //$('.board'+i+' td').hide();
-                    i=1;
+       if ($('#a').text() !== '') {
+            if ($('#a').text() == $('#d').text() &&
+                $('#a').text() == $('#g').text()) {
+                  alert('Game over! '+player+' is the winner!');
+                  changeBackground($('#a'), $('#a, #d, #g'));
+                  updateScore($('#a'));
                 }
             }
         //left diagonal check
-          if (anchorA.text() !== ''){
-            if (anchorA.text() == anchorE.text() &&
-                anchorA.text() == anchorI.text()) {
-                    alert('Game over! '+player+' is the winner!');
-                    //$('.board'+i).text() = anchorA.text();
-                    //$('.board'+i+' td').hide();
-                    i=1;
+          if ($('#a').text() !== '') {
+            if ($('#a').text() == $('#e').text() &&
+                $('#a').text() == $('#i').text()) {
+                  alert('Game over! '+player+' is the winner!');
+                  changeBackground($('#a'), $('#a, #e, #i'));
+                  updateScore($('#a'));
                 }
             }
 
 
        //middle column check
-         if (anchorB.text() !== ''){
-            if (anchorB.text() == anchorE.text() &&
-                anchorB.text() == $('.board'+i+' #h').text()) {
-                    alert('Game over! '+player+' is the winner!');
-                    //$('.board'+i).text() = $('.board'+i+' #b').text();
-                    //$('.board'+i+' td').hide();
-                    i=1;
+        if ($('#b').text() !== '') {
+            if ($('#b').text() == $('#e').text() &&
+                $('#b').text() == $('#h').text()) {
+                  alert('Game over! '+player+' is the winner!');
+                  changeBackground($('#b'), $('#b, #e, #h'));
+                  updateScore($('#b'));
                 }
             }
 
         //right column check
-        if (anchorC.text() !== ''){
-            if (anchorC.text() == $('.board'+i+' #f').text() &&
-                anchorC.text() == anchorI.text()) {
-                    alert('Game over! '+player+' is the winner!');
-                    //$('.board'+i).text() = anchorC.text();
-                    //$('.board'+i+' td').hide();
-                    i=1;
+       if ($('#c').text() !== '') {
+            if ($('#c').text() == $('#f').text() &&
+                $('#c').text() == $('#i').text()) {
+                  alert('Game over! '+player+' is the winner!');
+                  changeBackground($('#c'), $('#c, #f, #i'));
+                  updateScore($('#c'));
                 }
             }
             //right diag check
-          if (anchorC.text() !== ''){
-            if (anchorC.text() == anchorE.text() &&
-                anchorC.text() == anchorJ.text()) {
-                    alert('Game over! '+player+' is the winner!');
-                    //$('.board'+i).text() = $('.board'+i+' #c').text();
-                    //$('.board'+i+' td').hide();
-                    i=1;
+          if ($('#c').text() !== '') {
+            if ($('#c').text() == $('#e').text() &&
+                $('#c').text() == $('#g').text()) {
+                  alert('Game over! '+player+' is the winner!');
+                  changeBackground($('#c'), $('#c, #e, #g'));
+                  updateScore($('#c'));
                 }
             }
 
 
         //middle row check
 
-        if (anchorD.text() !== ''){
-            if (anchorD.text() == anchorE.text() &&
-                anchorD.text() == $('.board'+i+' #f').text()) {
-                    alert('Game over! '+player+' is the winner!');
-                    //$('.board'+i).text() = $('.board'+i+' #d').text();
-                    //$('.board'+i+' td').hide();
-                    i=1;
+       if ($('#d').text() !== '') {
+            if ($('#d').text() == $('#e').text() &&
+                $('#d').text() == $('#f').text()) {
+                  alert('Game over! '+player+' is the winner!');
+                  changeBackground($('#d'), $('#row1'));
+                  updateScore($('#d'));
                 }
             }
 
 
         //bottom row check
-        if (anchorJ.text() !== ''){
-            if (anchorJ.text() == $('.board'+i+' #h').text() &&
-                anchorJ.text() == anchorI.text()) {
-                    alert('Game over! '+player+' is the winner!');
-                    //$('.board'+i).text() = $('.board'+i+' #j').text();
-                    //$('.board'+i+' td').hide();
-                    i=1;
+       if ($('#g').text() !== '') {
+            if ($('#g').text() == $('#h').text() &&
+                $('#g').text() == $('#i').text()) {
+                  alert('Game over! '+player+' is the winner!');
+                  changeBackground($('#g'), $('#row2'));
+                  updateScore($('#g'));
                 }
             }
        }
-     }
+
 
     //$('#newGame').on('click',function(){
         //$('.square').text('');

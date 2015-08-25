@@ -39,8 +39,8 @@
           </div>
           <div class="col-md-4">
           <div id="btnX">
-          <input class="btn btn-success btn-lg btn-block" type="button" value="START" id="btnX">
-          <input class="btn btn-danger btn-lg btn-block" type="button" value="RESET" id="btnX">
+          <input class="btn btn-success btn-lg btn-block" type="button" value="START" id="btnStart">
+          <input class="btn btn-danger btn-lg btn-block" type="button" value="RESET" disabled="disabled" id="btnReset">
           </div>
         </div>
       </div>
@@ -50,182 +50,35 @@
       <h2></h2>
       <div class="score">
       <ul>
-        <li>Player 1</li>
-        <li>0:0</li>
-        <li>Player 2</li>
+        <li><div id="player1Name"></div></li>
+        <li id="scoreLine"><div id="player1Score">0</div>:<div id="player2Score">0</div></li>
+        <li><div id="player2Name"></div></li>
       </ul>
       </div>
       </div>
       <div class="clear"></div>
+      <div class="table-responsive">
       <div class="board">
-        <table>
+        <table class="boardBody">
         <tbody>
-        <!-- Row 1 -->
-            <tr id="row1">
-              <table class="board1">
-              <tr id="row11">
+              <tr id="row0">
                 <td id="a"></td>
                 <td id="b"></td>
                 <td id="c"></td>
               </tr>
-              <tr id="row12">
+              <tr id="row1">
                 <td id="d"></td>
                 <td id="e"></td>
                 <td id="f"></td>
               </tr>
-               <tr id="row13">
-                <td id="j"></td>
+               <tr id="row2">
+                <td id="g"></td>
                 <td id="h"></td>
                 <td id="i"></td>
-              </tr>
-              </table>
-              <table class="board2">
-              <tr id="row21">
-                <td id="a"></td>
-                <td id="b"></td>
-                <td id="c"></td>
-              </tr>
-              <tr id="row22">
-                <td id="d"></td>
-                <td id="e"></td>
-                <td id="f"></td>
-              </tr>
-               <tr id="row23">
-                <td id="j"></td>
-                <td id="h"></td>
-                <td id="i"></td>
-              </tr>
-              </table>
-              <table class="board3">
-              <tr id="row31">
-                <td id="a"></td>
-                <td id="b"></td>
-                <td id="c"></td>
-              </tr>
-              <tr id="row32">
-                <td id="d"></td>
-                <td id="e"></td>
-                <td id="f"></td>
-              </tr>
-               <tr id="row33">
-                <td id="j"></td>
-                <td id="h"></td>
-                <td id="i"></td>
-              </tr>
-              </table>
-           </tr>
-           <div ="clear"></div>
-              <!-- Row 2 -->
-           <tr id="row2">
-              <table class="board4">
-              <tr id="row41">
-                <td id="a"></td>
-                <td id="b"></td>
-                <td id="c"></td>
-              </tr>
-              <tr id="row42">
-                <td id="d"></td>
-                <td id="e"></td>
-                <td id="f"></td>
-              </tr>
-               <tr id="row43">
-                <td id="j"></td>
-                <td id="h"></td>
-                <td id="i"></td>
-              </tr>
-              </table>
-              <table class="board5">
-              <tr id="row51">
-                <td id="a"></td>
-                <td id="b"></td>
-                <td id="c"></td>
-              </tr>
-              <tr id="row52">
-                <td id="d"></td>
-                <td id="e"></td>
-                <td id="f"></td>
-              </tr>
-               <tr id="row53">
-                <td id="j"></td>
-                <td id="h"></td>
-                <td id="i"></td>
-              </tr>
-              </table>
-              <table class="board6">
-              <tr id="row61">
-                <td id="a"></td>
-                <td id="b"></td>
-                <td id="c"></td>
-              </tr>
-              <tr id="row62">
-                <td id="d"></td>
-                <td id="e"></td>
-                <td id="f"></td>
-              </tr>
-               <tr id="row63">
-                <td id="j"></td>
-                <td id="h"></td>
-                <td id="i"></td>
-              </tr>
-              </table>
-              </tr>
-              <!-- Row 3 -->
-              <div ="clear"></div>
-             <tr id="row3">
-              <table class="board7">
-              <tr id="row71">
-                <td id="a"></td>
-                <td id="b"></td>
-                <td id="c"></td>
-              </tr>
-              <tr id="row72">
-                <td id="d"></td>
-                <td id="e"></td>
-                <td id="f"></td>
-              </tr>
-               <tr id="row73">
-                <td id="j"></td>
-                <td id="h"></td>
-                <td id="i"></td>
-              </tr>
-              </table>
-              <table class="board8">
-              <tr id="row81">
-                <td id="a"></td>
-                <td id="b"></td>
-                <td id="c"></td>
-              </tr>
-              <tr id="row82">
-                <td id="d"></td>
-                <td id="e"></td>
-                <td id="f"></td>
-              </tr>
-               <tr id="row83">
-                <td id="j"></td>
-                <td id="h"></td>
-                <td id="i"></td>
-              </tr>
-              </table>
-              <table class="board9">
-              <tr id="row91">
-                <td id="a"></td>
-                <td id="b"></td>
-                <td id="c"></td>
-              </tr>
-              <tr id="row92">
-                <td id="d"></td>
-                <td id="e"></td>
-                <td id="f"></td>
-              </tr>
-               <tr id="row93">
-                <td id="j"></td>
-                <td id="h"></td>
-                <td id="i"></td>
-              </tr>
-              </table>
               </tr>
         </tbody>
         </table>
+      </div>
       </div>
 
 

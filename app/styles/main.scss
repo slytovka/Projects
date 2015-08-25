@@ -36,6 +36,9 @@ body {
   margin: 0;
   padding: 0;
 }
+#player1Score, #player2Score {
+  display: inline-block;
+}
 #btnX {
   float: right;
   margin: auto 10px;
@@ -54,6 +57,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 h2 {
   text-align: center;
 }
@@ -78,7 +82,7 @@ h2 {
   height: 600px;
   background-color: #eee;
   border-radius: 20px;
-  border: 3px solid #0099FF;
+  border: 3px solid #FF9900;
 
 }
 .clear {
@@ -86,17 +90,17 @@ h2 {
   clear: both;
 }
 
-.board1, .board2, .board3, .board4, .board5, .board6, .board7, .board8, .board9 {
-  width: 30%;
-  height: 30%;
-  float: left;
+.boardBody {
+  width: 80%;
+  height: 80%;
   table-layout: fixed;
+  margin: 10% auto;
 }
 
 
 
 tr {
-  margin: 0;
+  //margin: 0;
   text-align: center;
   font-family: 'Pacifico', Helvetica;
   //overflow: hidden;
@@ -107,7 +111,6 @@ tr {
 td {
 width: 30%;
 height: 30%;
-table-layout: fixed;
 border: 3px solid #0099FF;
 overflow: hidden;
 }
