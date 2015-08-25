@@ -15,15 +15,20 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: black;
-  //background-image: url('/images/background.jpeg');
+  //background-color: black;
+  background-image: url('/images/background2.jpg');
   background-size: cover;
   font-family: Helvetica Neue, Zapfino, sans-serif;
   font-size: 20px;
+  opacity: 0.85;
 }
 
 .container {
   background-color: #FBFBFB;
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+   -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
 
 }
 .head_line {
@@ -40,8 +45,13 @@ body {
 }
 
 #inputForms  {
-  position: relative;
-  top: 25%;
+  position: absolute;
+  display: block;
+  width: 57%;
+  top: 21%;
+  bottom: 25%;
+  z-index: 2;
+  //overflow: hidden;
 }
 #player1Score, #player2Score {
   display: inline-block;
@@ -52,15 +62,24 @@ body {
   border: 2px solid #666666;
   border-radius: 50%;
   filter: alpha(opacity=60);
-  opacity: 0.6;
+  opacity: 0.8;
   margin: auto 10px;
   -webkit-box-shadow: 0 0 1px 0px rgb( 255, 255, 255);
   box-shadow: 0 0 1px 0px rgb( 255, 255, 255);
   width: 200px;
   height: 200px;
   position: relative;
-  left: 15%;
-  z-index: 21;
+  left: 70%;
+  z-index: 2;
+  -webkit-transition: background-color .5s ease-in-out;
+  -moz-transition: background-color .5s ease-in-out;
+  -o-transition: background-color .5s ease-in-out;
+  -ms-transition: background-color .5s ease-in-out;
+  transition: background-color .5s ease-in-out;
+}
+
+#circle:hover {
+  background-color: #666666;
 }
 
 #btnX {
@@ -68,6 +87,26 @@ body {
   top: 50%;
   bottom: 50%;
   margin: -50px 0px 0px 50px;
+  opacity: 1;
+  z-index: 3
+}
+
+#btnStart {
+  background-color: #4ba614; background-image: -webkit-gradient(linear, left top, left bottom, from(#4ba614), to(#008c00));
+ background-image: -webkit-linear-gradient(top, #4ba614, #008c00);
+ background-image: -moz-linear-gradient(top, #4ba614, #008c00);
+ background-image: -ms-linear-gradient(top, #4ba614, #008c00);
+ background-image: -o-linear-gradient(top, #4ba614, #008c00);
+ background-image: linear-gradient(to bottom, #4ba614, #008c00);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#4ba614, endColorstr=#008c00);
+}
+
+#btnReset {
+  background-color: #ff9a9a; background-image: -webkit-gradient(linear, left top, left bottom, from(#ff9a9a), to(#ff4040));
+ background-image: -webkit-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -moz-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -ms-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -o-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: linear-gradient(to bottom, #ff9a9a, #ff4040);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff9a9a, endColorstr=#ff4040);
 }
 /*.head_line li {
   float: left;
@@ -109,6 +148,8 @@ h2 {
   background-color: #eee;
   border-radius: 20px;
   border: 3px solid #FF9900;
+  box-shadow: 10px 5px 5px black;
+  -webkit-box-shadow: 10px 5px 5px black;
 
 }
 .clear {
@@ -140,6 +181,16 @@ width: 30%;
 height: 30%;
 border: 3px solid #0099FF;
 overflow: hidden;
+font-size: 35px;
+}
+
+.notes {
+  text-align: center;
+  color: #0099FF;
+}
+
+.boardBody td:hover {
+  background-color: gray;
 }
 /*#a, #b, #c, #d {
   border-top: none;
@@ -156,14 +207,22 @@ overflow: hidden;
 
 
 #player1 {
-  background-color: #FF851B;
+  //background-color: #A498A9;
+  background: -webkit-linear-gradient(left,rgba(255,0,0,0.1),rgba(255,0,0,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,rgba(255,0,0,0.1),rgba(255,0,0,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,rgba(255,0,0,0.1),rgba(255,0,0,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, rgba(255,0,0,0.1), rgba(255,0,0,1)); /*Standard*/
   height: 60px;
   padding-top: 12px;
   //border-right: 2px solid black;
 }
 
 #player2 {
-  background-color: #9933FF;
+  //background-color: black;
+  background: -webkit-linear-gradient(left,rgba(255,0,0,0.1),rgba(0,0,0,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,rgba(255,0,0,0.1),rgba(0,0,0,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,rgba(255,0,0,0.1),rgba(0,0,0,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, rgba(255,0,0,0.1), rgba(0,0,0,1)); /*Standard*/
   height: 60px;
   padding-top: 12px;
   //border-right: 2px solid black;

@@ -2,16 +2,24 @@ $(document).ready(function(){
     var turnCount=0;
 
       $('.board td').on('click', function(){
+
+        /// adding audio file
+        if ($(this).text()=='') {
             if (turnCount % 2 === 0){
               $(this).text('X');
               $('.notes').text('Player 2 turn');
               isVictory('X');
+
             } else {
            //player 2's turn (O)
               $(this).text('O');
               $('.notes').text('Player 1 turn');
               isVictory('O');
             }
+            }
+            else {
+              turnCount = turnCount-1;
+          }
           turnCount++;
 
       });
@@ -49,6 +57,7 @@ $(document).ready(function(){
           $('#player2').children().val('');
           resetBoard();
           $('.boardBody').css('visibility', 'hidden');
+          $('#btnStart').val('START');
       });
       // Function to clear board and reset background color
       function resetBoard() {
@@ -72,9 +81,9 @@ $(document).ready(function(){
       // Function to change background color when someone wins
       function changeBackground (lastStep, place) {
         if (lastStep.text() == 'X') {
-            place.css('background-color', '#FF851B');
+            place.css('background-color', 'red');
             } if (lastStep.text() == 'O') {
-            place.css('background-color', '#9933FF');
+            place.css('background-color', 'black');
             }
       }
         // Function to check if one of the players is a winner
@@ -83,7 +92,7 @@ $(document).ready(function(){
         if ($('#a').text() !== '') {
             if ($('#a').text() == $('#b').text() &&
                 $('#a').text() == $('#c').text()) {
-                  changeBackground($('#a'), $('#row0'));
+                  changeBackground($('#a'), $('#a, #b, #c'));
                   updateScore($('#a'));
                   $('#btnStart').val('Continue');
                   $('.notes').text('Great!');
@@ -153,9 +162,11 @@ $(document).ready(function(){
             if ($('#d').text() == $('#e').text() &&
                 $('#d').text() == $('#f').text()) {
                   //alert('Game over! '+player+' is the winner!');
-                  changeBackground($('#d'), $('#row1'));
+                  changeBackground($('#d'), $('#d, #e, #f'));
                   updateScore($('#d'));
                   $('#btnStart').val('Continue');
+                  $('.notes').text('Congratulations!');
+
                 }
             }
 
@@ -164,7 +175,7 @@ $(document).ready(function(){
             if ($('#g').text() == $('#h').text() &&
                 $('#g').text() == $('#i').text()) {
                   //alert('Game over! '+player+' is the winner!');
-                  changeBackground($('#g'), $('#row2'));
+                  changeBackground($('#g'), $('#g, #h, #i'));
                   updateScore($('#g'));
                   $('#btnStart').val('Continue');
                 }
