@@ -39,11 +39,15 @@
       "browser": true,
       "mocha": true
     },
+
     "rules": {
       "quotes": [
         2,
         "single"
       ]
-    }
+    },
+     "globals": {
+     "$": false
+   }
   }
 }
