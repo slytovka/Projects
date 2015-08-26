@@ -2,15 +2,14 @@ $(document).ready(function(){
     var turnCount=0;
 
       $('.board td').on('click', function(){
-
-        /// adding audio file
         if ($(this).text()=='') {
             if (turnCount % 2 === 0){
+            //player 1's turn (X)
               $(this).text('X');
               $('.notes').text('Player 2 turn');
               isVictory('X');
 
-            } else {
+            } else if (turnCount % 2 === 1) {
            //player 2's turn (O)
               $(this).text('O');
               $('.notes').text('Player 1 turn');
@@ -43,6 +42,7 @@ $(document).ready(function(){
           $('.boardBody').css('visibility', 'visible');
           resetBoard();
           $('.notes').text('Player 1 turn');
+          turnCount=0;
 
       });
       //adding functionality for RESET button
@@ -58,6 +58,7 @@ $(document).ready(function(){
           resetBoard();
           $('.boardBody').css('visibility', 'hidden');
           $('#btnStart').val('START');
+          $('.notes').text('');
       });
       // Function to clear board and reset background color
       function resetBoard() {
@@ -96,6 +97,7 @@ $(document).ready(function(){
                   updateScore($('#a'));
                   $('#btnStart').val('PLAY ON');
                   $('.notes').text('Great!');
+                  turnCount=0.5;
                 }
             }
         //left column check
@@ -107,6 +109,7 @@ $(document).ready(function(){
                   updateScore($('#a'));
                   $('#btnStart').val('PLAY ON');
                   $('.notes').text('You are Genius');
+                  turnCount=0.5;
                 }
             }
         //left diagonal check
@@ -118,6 +121,7 @@ $(document).ready(function(){
                   updateScore($('#a'));
                   $('#btnStart').val('PLAY ON');
                   $('.notes').text('Well done!');
+                  turnCount=0.5;
                 }
             }
 
@@ -131,6 +135,7 @@ $(document).ready(function(){
                   updateScore($('#b'));
                   $('#btnStart').val('PLAY ON');
                   $('.notes').text('Awesome');
+                  turnCount=0.5;
                 }
             }
 
@@ -143,6 +148,7 @@ $(document).ready(function(){
                   updateScore($('#c'));
                   $('#btnStart').val('PLAY ON');
                   $('.notes').text('Good Job!');
+                  turnCount=0.5;
                 }
             }
         //right diag check
@@ -154,6 +160,7 @@ $(document).ready(function(){
                   updateScore($('#c'));
                   $('#btnStart').val('PLAY ON');
                   $('.notes').text('Congratulations!');
+                  turnCount=0.5;
                 }
             }
 
@@ -166,7 +173,7 @@ $(document).ready(function(){
                   updateScore($('#d'));
                   $('#btnStart').val('PLAY ON');
                   $('.notes').text('Congratulations!');
-
+                  turnCount=0.5;
                 }
             }
 
@@ -178,6 +185,7 @@ $(document).ready(function(){
                   changeBackground($('#g'), $('#g, #h, #i'));
                   updateScore($('#g'));
                   $('#btnStart').val('PLAY ON');
+                  turnCount=0.5;
                 }
             }
        }

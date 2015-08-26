@@ -28,14 +28,11 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-
     <div class="container">
       <div class="header">TIC-TAC-TOE</div>
       <div class="head_line">
         <div class="row" style="background-color: #0099FF">
           <div class="col-md-6" id = "inputForms">
-          <!--<div>Enter your names and click "START"</div>-->
           <div id="player1"><input type="text" class="form-control" placeholder="Player 1" style = "width: 200px; padding-left: 10px; margin-left: 10px"></div>
           <div id="player2"><input type="text" class="form-control" placeholder="Player 2" style = "width: 200px; padding-left: 10px; margin-left: 10px"></div>
           </div>
@@ -66,17 +63,17 @@
       <div class="board">
         <table class="boardBody">
         <tbody>
-              <tr id="row0">
+              <tr>
                 <td id="a"></td>
                 <td id="b"></td>
                 <td id="c"></td>
               </tr>
-              <tr id="row1">
+              <tr>
                 <td id="d"></td>
                 <td id="e"></td>
                 <td id="f"></td>
               </tr>
-               <tr id="row2">
+               <tr>
                 <td id="g"></td>
                 <td id="h"></td>
                 <td id="i"></td>
@@ -85,12 +82,9 @@
         </table>
       </div>
       </div>
-
-
       <div class="footer">
       </div>
     </div>
-
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -98,7 +92,6 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
 
     <!-- build:js(.) scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
@@ -114,7 +107,6 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
-
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
