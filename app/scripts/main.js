@@ -94,7 +94,7 @@ $(document).ready(function(){
                 $('#a').text() == $('#c').text()) {
                   changeBackground($('#a'), $('#a, #b, #c'));
                   updateScore($('#a'));
-                  $('#btnStart').val('Continue');
+                  $('#btnStart').val('PLAY ON');
                   $('.notes').text('Great!');
                 }
             }
@@ -105,7 +105,7 @@ $(document).ready(function(){
                   //alert('Game over! '+player+' is the winner!');
                   changeBackground($('#a'), $('#a, #d, #g'));
                   updateScore($('#a'));
-                  $('#btnStart').val('Continue');
+                  $('#btnStart').val('PLAY ON');
                   $('.notes').text('You are Genius');
                 }
             }
@@ -116,7 +116,7 @@ $(document).ready(function(){
                   //alert('Game over! '+player+' is the winner!');
                   changeBackground($('#a'), $('#a, #e, #i'));
                   updateScore($('#a'));
-                  $('#btnStart').val('Continue');
+                  $('#btnStart').val('PLAY ON');
                   $('.notes').text('Well done!');
                 }
             }
@@ -129,7 +129,7 @@ $(document).ready(function(){
                   //alert('Game over! '+player+' is the winner!');
                   changeBackground($('#b'), $('#b, #e, #h'));
                   updateScore($('#b'));
-                  $('#btnStart').val('Continue');
+                  $('#btnStart').val('PLAY ON');
                   $('.notes').text('Awesome');
                 }
             }
@@ -141,7 +141,7 @@ $(document).ready(function(){
                   //alert('Game over! '+player+' is the winner!');
                   changeBackground($('#c'), $('#c, #f, #i'));
                   updateScore($('#c'));
-                  $('#btnStart').val('Continue');
+                  $('#btnStart').val('PLAY ON');
                   $('.notes').text('Good Job!');
                 }
             }
@@ -152,7 +152,7 @@ $(document).ready(function(){
                   //alert('Game over! '+player+' is the winner!');
                   changeBackground($('#c'), $('#c, #e, #g'));
                   updateScore($('#c'));
-                  $('#btnStart').val('Continue');
+                  $('#btnStart').val('PLAY ON');
                   $('.notes').text('Congratulations!');
                 }
             }
@@ -164,7 +164,7 @@ $(document).ready(function(){
                   //alert('Game over! '+player+' is the winner!');
                   changeBackground($('#d'), $('#d, #e, #f'));
                   updateScore($('#d'));
-                  $('#btnStart').val('Continue');
+                  $('#btnStart').val('PLAY ON');
                   $('.notes').text('Congratulations!');
 
                 }
@@ -177,10 +177,9 @@ $(document).ready(function(){
                   //alert('Game over! '+player+' is the winner!');
                   changeBackground($('#g'), $('#g, #h, #i'));
                   updateScore($('#g'));
-                  $('#btnStart').val('Continue');
+                  $('#btnStart').val('PLAY ON');
                 }
             }
        }
-
 });
 
